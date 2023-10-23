@@ -29,6 +29,7 @@ THIRD_PARTY_APPS = [
 LOCAL_APPS = [
     "commands",
     "user",
+    "package",
 ]
 
 INSTALLED_APPS = [
@@ -162,17 +163,8 @@ JAZZMIN_SETTINGS = {
         "auth.user": "fas fa-user",
         "auth.group": "fas fa-users",
         "User.User": "fas fa-user",
-        # "contact_us.ContactUsForm": "fas fa-phone-alt",
-        # "contact_us.ContactUsPage": "fas fa-headset",
-        # "project.Project": "fas fa-building",
-        # "blog.Blog": "fas fa-blog",
-        # "home.Home": "fas fa-home",
-        # "home.Footer": "fas fa-water",
-        # "about_us.AboutUs": "fas fa-user-shield",
-        # "career.Career": "fas fa-briefcase",
-        # "career.CareerForm": "fas fa-id-card-alt",
-        # "header_footer.Header": "fas fa-ellipsis-h",
-        # "header_footer.Footer": "fas fa-mail-bulk",
+        "package.Package": "fas fa-building",
+
     },
 }
 
