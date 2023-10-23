@@ -32,6 +32,6 @@ class UserManager(BaseUserManager):
     def create_superuser(self, email, password, **extra_fields):
         """Creates and saves a new superuser"""
         extra_fields.update(
-            {"is_staff": True, "is_superuser": True, "is_active": True,}
+            {"is_staff": True, "is_superuser": True, "is_active": True, }
         )
         return self.queryset.create_user(email=email, password=password, **extra_fields)
