@@ -1,0 +1,4 @@
+from .test_create_user_queryset import UsersCreateTests
+from .test_email_unique import EmailUnique
+from .test_login_apis import APILoginTests
+from .test_refresh_token_api import APIRefreshTokenTests
