@@ -32,7 +32,10 @@ class APILoginTests(TestCase):
         self.__create_user()
         res = self.client.post(
             self.url,
-            {"email": user_valid_dataset[1]["email"], "password": user_valid_dataset[0]["password"]},
+            {
+                "email": user_valid_dataset[1]["email"],
+                "password": user_valid_dataset[0]["password"],
+            },
         )
         self.assertEqual(res.status_code, status.HTTP_401_UNAUTHORIZED)
 

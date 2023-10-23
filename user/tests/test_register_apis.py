@@ -47,4 +47,3 @@ class APIRegisterTests(TestCase):
             register_dataset.get("valid_data").get("full_name"),
             res.data.get("full_name"),
         )
-
