@@ -1,0 +1,224 @@
+{
+	"info": {
+		"_postman_id": "4ac3d206-5252-4c7f-9af6-dfac079ba116",
+		"name": "bit68",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12391328"
+	},
+	"item": [
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"full_name\": \"mousa nageh\",\n    \"email\": \"test@test.com\",\n    \"password\": \"Mousa@mousa1\",\n    \"re_password\": \"Mousa@mousa1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/oauth/register",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"oauth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"test@test.com\",\n    \"password\": \"Mousa@mousa1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/oauth/login",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"oauth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "refresh token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"refresh\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTcwMDY3OTE4OSwiaWF0IjoxNjk4MDg3MTg5LCJqdGkiOiIzOGVjODljODRhYmU0MGZjYjczYTRiNWVjNTU3MzJiYSIsInVzZXJfaWQiOjMsImVtYWlsIjoidGVzdEB0ZXN0LmNvbSIsImZ1bGxfbmFtZSI6Im1vdXNhIG5hZ2VoIn0.X4Ob1_bYH51z5w8wQ4821Rc_hadKnjCCWLg0EqNLCyk\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/oauth/refresh-token",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"oauth",
+						"refresh-token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "packages",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"refresh\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTcwMDY3OTE4OSwiaWF0IjoxNjk4MDg3MTg5LCJqdGkiOiIzOGVjODljODRhYmU0MGZjYjczYTRiNWVjNTU3MzJiYSIsInVzZXJfaWQiOjMsImVtYWlsIjoidGVzdEB0ZXN0LmNvbSIsImZ1bGxfbmFtZSI6Im1vdXNhIG5hZ2VoIn0.X4Ob1_bYH51z5w8wQ4821Rc_hadKnjCCWLg0EqNLCyk\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/packages/?ordering=-price&keyword=FGD",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"packages",
+						""
+					],
+					"query": [
+						{
+							"key": "ordering",
+							"value": "-price"
+						},
+						{
+							"key": "keyword",
+							"value": "FGD"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "subscribe to packages",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"packages\": [1,2,3,4]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/packages/subscription",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"packages",
+						"subscription"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get user subscriptions",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"packages\": [1,2,3,4]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/packages/subscription",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"packages",
+						"subscription"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
