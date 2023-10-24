@@ -148,7 +148,7 @@ docker composer up
 - notes :
   - this api required authentication using access token
 
-#### create  user subscription list API
+#### create user subscriptions API
 - endpoint `POST` : `{{base_url}}/api/packages/subscription`
 - payload:
 ```json
