@@ -118,8 +118,8 @@ docker composer up
   - this api required authentication using access token  
   - query parameters `ordering` and `keyword` are optional to pass them
   - if `ordering` is passed the value should be `-price` or `price`:
-    - `ordering=-price` is descending order for package
-    - `ordering=price` is ascending order for package
+    - `ordering=-price` is descending order of price for package
+    - `ordering=price` is ascending order of price for package
   - if `keyword` if passed , will be used to search in packages names
 
 #### user subscription list API
