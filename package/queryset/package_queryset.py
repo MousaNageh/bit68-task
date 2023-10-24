@@ -10,3 +10,10 @@ class PackageQueryset:
         if ordering:
             query = query.order_by(ordering)
         return query
+
+    @staticmethod
+    def get_packages_by_id(package_ids: list, ids_only=False):
+        query = Package.objects.filter(id__in=package_ids)
+        if ids_only:
+            query = list(query.values_list("id", flat=True))
+        return query

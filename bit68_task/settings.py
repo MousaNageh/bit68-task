@@ -164,6 +164,7 @@ JAZZMIN_SETTINGS = {
         "auth.group": "fas fa-users",
         "User.User": "fas fa-user",
         "package.Package": "fas fa-building",
+        "package.Subscription": "fas fa-money-check-alt"
 
     },
 }
