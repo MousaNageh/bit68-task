@@ -34,6 +34,9 @@ docker composer up
  ```
 ### base_url : `http://127.0.0.1:9999`
 ### admin panel url : `http://127.0.0.1:9999/admin`
+- default admin email `admin@admin.com`
+- default admin password `12345`
+
 ### postman collection `bit68.postman_collection.json` in root directory
   - you can import it using postman application, it contains all endpoints 
 ## APIS
