@@ -34,7 +34,7 @@ docker composer up
  ```
 ### base_url : `http://127.0.0.1:9999`
 ### admin panel url : `http://127.0.0.1:9999/admin`
-### postman collection is in file `bit68.postman_collection.json` in root directory
+### postman collection `bit68.postman_collection.json` in root directory
   - you can import it using postman application, it contains all endpoints 
 ## APIS
 
@@ -118,8 +118,8 @@ docker composer up
   - this api required authentication using access token  
   - query parameters `ordering` and `keyword` are optional to pass them
   - if `ordering` is passed the value should be `-price` or `price`:
-    - `-price` is descending order for package
-    - `price` is ascending order for package
+    - `ordering=-price` is descending order for package
+    - `ordering=price` is ascending order for package
   - if `keyword` if passed , will be used to search in packages names
 
 #### user subscription list API
@@ -127,7 +127,7 @@ docker composer up
 - response sample:
 ```json
 {
-    "count": 4,
+    "count": 1,
     "next": null,
     "previous": null,
     "results": [
@@ -137,30 +137,6 @@ docker composer up
                 "id": 1,
                 "name": "fgdgf",
                 "price": 3443.0
-            }
-        },
-        {
-            "id": 2,
-            "package": {
-                "id": 2,
-                "name": "fdgdfg",
-                "price": 445345.0
-            }
-        },
-        {
-            "id": 3,
-            "package": {
-                "id": 3,
-                "name": "gdrfger",
-                "price": 454545.0
-            }
-        },
-        {
-            "id": 4,
-            "package": {
-                "id": 4,
-                "name": "package 1",
-                "price": 5445.0
             }
         }
     ]
@@ -183,5 +159,5 @@ docker composer up
 ```
 - notes :
   - this api required authentication using access token
-  - user can subscribe to one package 
+  - user can can not subscribe to the same package twice  
   - packages ids in the payload must be existed 
